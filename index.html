@@ -10,7 +10,17 @@
   <body>
     <main>
       <h1 class="project-header">Etch-a-Sketch</h1>
-      <button class="bord-size">Board Size</button>
+      <div class="slider">
+        <p class="slider-header">Board Size</p>
+        <input
+          type="range"
+          min="16"
+          max="100"
+          value="16"
+          oninput="rangeValue.innerText = this.value"
+        />
+        <p id="rangeValue">16</p>
+      </div>
       <button class="bord-size">Clear Board</button>
       <div class="board"></div>
     </main>
