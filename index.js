@@ -1,6 +1,6 @@
 const board = document.querySelector('.board');
 
-makeBoard(16);
+makeBoard(32);
 
 function makeBoard(size) {
   for (let i = 0; i < size * size; i++) {
@@ -11,3 +11,11 @@ function makeBoard(size) {
     board.appendChild(cell);
   }
 }
+
+const cells = document.querySelectorAll('.cell');
+
+cells.forEach((cell) =>
+  cell.addEventListener('mouseenter', () => {
+    cell.style.backgroundColor = 'blue';
+  })
+);
