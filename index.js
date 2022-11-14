@@ -1,20 +1,31 @@
 const board = document.querySelector('.board');
 const boardSize = document.querySelector('input');
+const colorSelector = document.querySelector('#color');
 
 boardSize.addEventListener('change', (event) => makeBoard(event));
 
 function makeBoard(event) {
-  const size = Number(event.target.value);
   board.replaceChildren();
+
+  const size = Number(event.target.value);
 
   for (let i = 0; i < size * size; i++) {
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     const cell = document.createElement('div');
-    cell.addEventListener('mouseenter', () => {
-      cell.style.backgroundColor = 'blue';
-    });
     cell.classList.add('cell');
     board.appendChild(cell);
+
+    cell.addEventListener('mouseenter', () => {
+      if (colorSelector.value !== 'multicolor') {
+        cell.style.backgroundColor = colorSelector.value;
+      } else {
+        cell.style.backgroundColor =
+          '#' +
+          Math.floor(Math.random() * 16777215)
+            .toString(16)
+            .padStart(6, '0');
+      }
+    });
   }
 }
