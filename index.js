@@ -1,13 +1,20 @@
 const board = document.querySelector('.board');
 const boardSize = document.querySelector('input');
 const colorSelector = document.querySelector('#color');
+const clearBoard = document.querySelector('.clear');
 
-boardSize.addEventListener('change', (event) => makeBoard(event));
+boardSize.addEventListener('change', () => makeBoard());
 
-function makeBoard(event) {
+clearBoard.addEventListener('click', () => {
+  document
+    .querySelectorAll('.cell')
+    .forEach((cell) => (cell.style.backgroundColor = 'white'));
+});
+
+function makeBoard() {
   board.replaceChildren();
 
-  const size = Number(event.target.value);
+  const size = Number(boardSize.value);
 
   for (let i = 0; i < size * size; i++) {
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
