@@ -2,6 +2,8 @@
 
 :root {
   --main-background-color: rgba(251, 251, 226, 0.612);
+  --shadow-color: rgba(0, 4, 255, 0.289);
+  --border-color: rgba(0, 0, 0, 0.102);
   --yellow-color: #fffe00;
   --blue-color: #0001ff;
 }
@@ -33,7 +35,9 @@ input[type='range'] {
   width: 100%;
   height: 15px;
   background: var(--yellow-color);
+  border: 0.5px solid var(--border-color);
   border-radius: 5px;
+  padding: 0 3px;
 }
 
 input[type='range']::-webkit-slider-thumb {
@@ -42,20 +46,26 @@ input[type='range']::-webkit-slider-thumb {
   width: 10px;
   background: var(--blue-color);
   cursor: ew-resize;
-  box-shadow: 0 0 2px 0 #555;
-  transition: background 0.3s ease-in-out;
+  box-shadow: var(--shadow-color) 3px 3px 5px 2px;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
 }
 
 .board {
   width: 650px;
   height: 650px;
   display: grid;
-  box-shadow: rgba(1, 4, 150, 0.56) 0px 22px 70px 4px;
+  box-shadow: var(--shadow-color) 0px 22px 70px 4px;
   background-color: white;
 }
 
 .cell {
-  border: 0.5px solid rgba(0, 0, 0, 0.102);
+  border: 0.5px solid var(--border-color);
 }
 
 .attribution {
@@ -68,7 +78,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .attribution a {
   text-decoration: none;
-  background-image: linear-gradient(blue, yellow);
+  background-image: linear-gradient(var(--blue-color), var(--yellow-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
