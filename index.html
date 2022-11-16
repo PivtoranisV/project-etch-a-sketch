@@ -11,14 +11,16 @@
     <main>
       <h1 class="project-header">Etch-a-Sketch</h1>
       <div class="slider">
-        <p class="slider-header">Board Size</p>
-        <input
-          type="range"
-          min="16"
-          max="100"
-          value="16"
-          oninput="rangeValue.innerText = this.value"
-        />
+        <div class="slider-container">
+          <p class="slider-header">Board Size</p>
+          <input
+            type="range"
+            min="16"
+            max="100"
+            value="16"
+            oninput="rangeValue.innerText = this.value"
+          />
+        </div>
         <p id="rangeValue">0</p>
       </div>
       <label for="color">Choose the Color:</label>
