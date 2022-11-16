@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --main-background-color: rgba(251, 251, 226, 0.612);
+  --yellow-color: #fffe00;
+  --blue-color: #0001ff;
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Press Start 2P', cursive;
 }
 
 body {
@@ -9,7 +18,7 @@ body {
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  background-color: rgba(251, 251, 226, 0.612);
+  background-color: var(--main-background-color);
 }
 
 main {
@@ -19,11 +28,30 @@ main {
   gap: 30px;
 }
 
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: var(--yellow-color);
+  border-radius: 5px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 10px;
+  background: var(--blue-color);
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
 .board {
-  width: 600px;
-  height: 600px;
-  border: 1px solid black;
+  width: 650px;
+  height: 650px;
   display: grid;
+  box-shadow: rgba(1, 4, 150, 0.56) 0px 22px 70px 4px;
+  background-color: white;
 }
 
 .cell {
