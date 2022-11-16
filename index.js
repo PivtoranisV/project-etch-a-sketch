@@ -2,6 +2,7 @@ const board = document.querySelector('.board');
 const boardSize = document.querySelector('input');
 const colorSelector = document.querySelector('#color');
 const clearBoard = document.querySelector('.clear');
+const rangeInputs = document.querySelectorAll('input[type="range"]');
 
 boardSize.addEventListener('change', () => makeBoard());
 
@@ -9,6 +10,10 @@ clearBoard.addEventListener('click', () => {
   document
     .querySelectorAll('.cell')
     .forEach((cell) => (cell.style.backgroundColor = 'white'));
+});
+
+rangeInputs.forEach((input) => {
+  input.addEventListener('input', handleInputChange);
 });
 
 function makeBoard() {
@@ -35,4 +40,13 @@ function makeBoard() {
       }
     });
   }
+}
+
+function handleInputChange(event) {
+  let target = event.target;
+  const min = target.min;
+  const max = target.max;
+  const val = target.value;
+
+  target.style.backgroundSize = ((val - min) * 100) / (max - min) + '% 100%';
 }

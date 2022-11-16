@@ -77,13 +77,16 @@ input[type='range'] {
   border: 0.5px solid var(--border-color);
   border-radius: 5px;
   padding: 0 3px;
+  background-image: linear-gradient(var(--blue-color), var(--blue-color));
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
 }
 
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 10px;
   width: 10px;
-  background: var(--blue-color);
+  background: black;
   cursor: ew-resize;
   box-shadow: var(--shadow-color) 3px 3px 5px 2px;
 }
