@@ -48,6 +48,11 @@ main {
   color: transparent;
 }
 
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
 .slider {
   display: flex;
   flex-direction: column;
@@ -96,6 +101,18 @@ input[type='range']::-webkit-slider-runnable-track {
   box-shadow: none;
   border: none;
   background: transparent;
+}
+
+#color {
+  -webkit-appearance: none;
+  background-color: var(--main-background-color);
+  box-shadow: var(--shadow-color) 0px 50px 100px -20px,
+    var(--shadow-color) 0px 30px 60px -30px,
+    var(--shadow-color) 0px -2px 6px 0px inset;
+  border-radius: 5px;
+  border: none;
+  width: 185px;
+  padding: 5px;
 }
 
 .board {
