@@ -53,15 +53,25 @@ main {
   gap: 20px;
 }
 
-.slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#color,
+.slider,
+.clear {
+  background-color: var(--main-background-color);
   box-shadow: var(--shadow-color) 0px 50px 100px -20px,
     var(--shadow-color) 0px 30px 60px -30px,
     var(--shadow-color) 0px -2px 6px 0px inset;
   padding: 5px;
   border-radius: 5px;
+  border: none;
+  width: 185px;
+  padding: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .slider-container {
@@ -103,16 +113,10 @@ input[type='range']::-webkit-slider-runnable-track {
   background: transparent;
 }
 
-#color {
+#color,
+.clear {
   -webkit-appearance: none;
-  background-color: var(--main-background-color);
-  box-shadow: var(--shadow-color) 0px 50px 100px -20px,
-    var(--shadow-color) 0px 30px 60px -30px,
-    var(--shadow-color) 0px -2px 6px 0px inset;
-  border-radius: 5px;
-  border: none;
-  width: 185px;
-  padding: 5px;
+  cursor: pointer;
 }
 
 .board {
@@ -128,11 +132,16 @@ input[type='range']::-webkit-slider-runnable-track {
 }
 
 .attribution {
-  margin-top: 50px;
-  font-size: 1.3rem;
+  margin: 25px 0 15px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: var(--shadow-color) 0px 50px 100px -20px,
+    var(--shadow-color) 0px 30px 60px -30px,
+    var(--shadow-color) 0px -2px 6px 0px inset;
+  background-color: var(--main-background-color);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .attribution a {
